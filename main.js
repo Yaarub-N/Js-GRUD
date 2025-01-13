@@ -27,6 +27,7 @@ let create = document.querySelector("#create");
 let search = document.querySelector("#search");
 let byTitle = document.querySelector("#byTitle");
 let byCategory = document.querySelector("#byCategory");
+let tbody = document.querySelector("#tbody");
 //get total
 function getTotal() {
   if (price.value != ``) {
@@ -43,6 +44,7 @@ function getTotal() {
 let data;
 if (localStorage.product != null) {
   data = JSON.parse(localStorage.product);
+  read();
 } else {
   data = [];
 }
@@ -62,6 +64,7 @@ create.addEventListener("click", function () {
   console.log(data);
   localStorage.setItem(`product`, JSON.stringify(data));
   clearInputs();
+  read();
 });
 //clear inputs
 function clearInputs() {
@@ -74,4 +77,26 @@ function clearInputs() {
   count.value = "";
   category.value = "";
   total.style.color = "#f44336";
+}
+
+//read
+
+function read() {
+  let readPro = "";
+  for (let i = 0; i < data.length; i++) {
+    readPro += ` <tr>
+                <td>${data[i].id}</td>
+                <td>${data[i].title}</td>
+                <td>${data[i].price}</td>
+                <td>${data[i].taxes}</td>
+                <td>${data[i].ads}</td>
+                <td>${data[i].discount}</td>
+                <td>${data[i].total}</td>
+                <td>${data[i].category}</td>
+                <td><button class="update" id="update">update</button></td>
+                <td><button class="delete" id="Delete">Delete</button></td>
+              </tr>`;
+  }
+
+  tbody.innerHTML = readPro;
 }
