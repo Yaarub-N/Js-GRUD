@@ -38,3 +38,27 @@ function getTotal() {
     total.style.color = "#f44336";
   }
 }
+
+//create product
+let data;
+if (localStorage.product != null) {
+  data = JSON.parse(localStorage.product);
+} else {
+  data = [];
+}
+
+create.addEventListener("click", function () {
+  var datapro = {
+    title: title.value,
+    price: price.value,
+    taxes: taxes.value,
+    ads: ads.value,
+    discount: discount.value,
+    total: total.innerHTML,
+    count: count.value,
+    category: category.value,
+  };
+  data.push(datapro);
+  console.log(data);
+  localStorage.setItem(`product`, JSON.stringify(data));
+});
