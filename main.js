@@ -29,7 +29,7 @@ let byTitle = document.querySelector("#byTitle");
 let byCategory = document.querySelector("#byCategory");
 //get total
 function getTotal() {
-  if (price.value != "") {
+  if (price.value != ``) {
     let result = +price.value + +taxes.value + +ads.value - +discount.value;
     total.textContent = result;
     total.style.color = " #4caf50";
@@ -61,4 +61,17 @@ create.addEventListener("click", function () {
   data.push(datapro);
   console.log(data);
   localStorage.setItem(`product`, JSON.stringify(data));
+  clearInputs();
 });
+//clear inputs
+function clearInputs() {
+  title.value = "";
+  price.value = "";
+  taxes.value = "";
+  ads.value = "";
+  discount.value = "";
+  total.innerHTML = "";
+  count.value = "";
+  category.value = "";
+  total.style.color = "#f44336";
+}
