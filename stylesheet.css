@@ -63,12 +63,6 @@ body {
   color: var(--main-text2-color);
 }
 
-.header h4 {
-  font-size: 1.2rem;
-  color: var(--main-text-color);
-  margin-top: 5px;
-}
-
 /* Temaomkopplare */
 .switchContainer {
   position: relative;
