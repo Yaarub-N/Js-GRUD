@@ -54,6 +54,9 @@ body {
   z-index: 100;
   text-align: center;
 }
+.header .container {
+  padding-bottom: 0;
+}
 
 .header h2 {
   font-size: 2rem;
@@ -168,6 +171,8 @@ input[type="number"]:focus {
 .byTitle:hover,
 .byCategory:hover {
   box-shadow: var(--card-box-shadow);
+  background-color: var(--success-color);
+  color: var(--success-background);
 }
 
 .deleteAll {
@@ -183,6 +188,45 @@ input[type="number"]:focus {
 
 .deleteAll:hover {
   box-shadow: var(--card-box-shadow);
+  color: var(--error-background);
+  background-color: var(--error-color);
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-spacing: 10px;
+}
+.update {
+  padding: 5px;
+  background-color: var(--success-background);
+  color: var(--success-color);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.update:hover {
+  background-color: var(--success-color);
+  color: var(--success-background);
+}
+
+.delete {
+  padding: 5px;
+  background-color: var(--error-background);
+  color: var(--error-color);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.delete:hover {
+  color: var(--error-background);
+  background-color: var(--error-color);
+}
+
+table tr th {
+  text-transform: uppercase;
 }
 
 /* Responsiv design */
