@@ -12,20 +12,44 @@
         <h2>product provider</h2>
         <div class>
           <h4>Product management system</h4>
-          <input type="checkbox" name="" id="toggle" />
+          <input type="checkbox" name="" id="switch" />
         </div>
       </div>
     </header>
-    <header>
+    <main>
       <div class="container">
-        <h2>product provider</h2>
-        <div class>
-          <h4>Product management system</h4>
-          <input type="checkbox" name="" id="toggle" />
+        <div class="input" action="">
+          <input type="text" id="title" class="title" placeholder="Title" />
+          <div class="price-box">
+            <input type="text" id="price" class="price" placeholder="price" />
+            <input type="text" id="taxes" class="taxes" placeholder="Taxes" />
+            <input type="text" id="ads" class="ads" placeholder="Ads" />
+            <input
+              type="text"
+              id="discount"
+              class="discount"
+              placeholder="Discount"
+            />
+            <span>Total</span>
+          </div>
+          <input type="text" id="count" class="category" placeholder="category" />
+          <input type="text" id="category" class="category" placeholder="category" />
+          <input type="submit" value="Create" id="create" />
+        </input>
+        <div class="search">
+          <input
+            type="text"
+            name=""
+            placeholder="Search"
+            id="text"
+            class="text"
+          />
+          <input type="submit" value="Search by title" class="byTitle" id="byTitle" />
+          <input type="submit" value="Search by category" class="byCategory" id="byCategory" />
         </div>
+        <button class="deleteAll" id="deleteAll">Delete All</button>
       </div>
-    </header>
-
+    </main>
     <script src="main.js"></script>
   </body>
 </html>
