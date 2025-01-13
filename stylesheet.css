@@ -1,3 +1,4 @@
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -5,17 +6,7 @@
   scroll-behavior: smooth;
 }
 
-.dark-theme {
-  --main-background-color: #ffffff;
-  --main-text-color: #333333;
-  --main-text2-color: #666666;
-  --hover-color: #e8f0fe;
-  --box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-  --card-box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
-  --success-color: #4caf50;
-  --success-background: #e8f5e9;
-}
-
+/* Temavariabler */
 :root {
   --main-background-color: #0e1627;
   --main-text-color: #ffffff;
@@ -25,42 +16,61 @@
   --card-box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
   --success-color: #81c784;
   --success-background: #1b3a2f;
+  --error-color: #f44336;
+  --error-background: #3b1e1e;
 }
+
+.dark-theme {
+  --main-background-color: #ffffff;
+  --main-text-color: #333333;
+  --main-text2-color: #666666;
+  --hover-color: #e8f0fe;
+  --box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  --card-box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+  --success-color: #4caf50;
+  --success-background: #e8f5e9;
+  --error-color: #d32f2f;
+  --error-background: #fbe9e7;
+}
+
+/* Grundläggande styling */
 body {
-  scroll-behavior: smooth;
   background-color: var(--main-background-color);
   color: var(--main-text-color);
   font-family: Arial, sans-serif;
   line-height: 1.6;
   transition: all 0.3s ease;
+  padding-top: 80px;
 }
 
+/* Header */
 .header {
-  padding: 0px 5px;
   background-color: var(--main-background-color);
   box-shadow: var(--box-shadow);
   position: fixed;
-  min-width: calc(100% - 40px);
-  left: 50%;
-  transform: translate(-50%);
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 100;
   text-align: center;
 }
 
-.container {
-  max-width: calc(100% - 60px);
-  margin: 0 auto;
-  padding: 5px 15px;
-}
-
-.container h2 {
+.header h2 {
+  font-size: 2rem;
   color: var(--main-text2-color);
 }
 
+.header h4 {
+  font-size: 1.2rem;
+  color: var(--main-text-color);
+  margin-top: 5px;
+}
+
+/* Temaomkopplare */
 .switchContainer {
-  margin: 20px;
   position: relative;
-  left: 0;
+  display: inline-block;
+  margin-top: 10px;
 }
 
 .switch {
@@ -68,18 +78,116 @@ body {
 }
 
 .switch + label {
-  color: var(--main-text-color);
-  font-size: 1rem;
+  font-size: 1.5rem;
   cursor: pointer;
-  padding: 10px;
+  padding: 5px;
   border-radius: 50%;
-  box-shadow: var(--box-shadow);
   background-color: var(--hover-color);
+  box-shadow: var(--box-shadow);
   transition: 0.3s;
-  border: solid 1px var(--main-text-color);
-  margin: 10px 0;
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+  color: var(--main-text-color);
+}
+
+/* Huvudcontainer */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Inputfält */
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 100px;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--main-text-color);
+  border-radius: 5px;
+  background-color: var(--hover-color);
+  color: var(--main-text-color);
+  box-shadow: var(--box-shadow);
+  margin-top: 10px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: none;
+  box-shadow: var(--card-box-shadow);
+}
+
+/* Knappar */
+.create {
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--main-text2-color);
+  color: var(--main-background-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.create:hover {
+  background-color: var(--main-text-color);
+  color: var(--main-background-color);
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.byTitle,
+.byCategory {
+  padding: 10px 20px;
+  background-color: var(--success-background);
+  color: var(--success-color);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.byTitle:hover,
+.byCategory:hover {
+  box-shadow: var(--card-box-shadow);
+}
+
+.deleteAll {
+  padding: 10px 20px;
+  background-color: var(--error-background);
+  color: var(--error-color);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.deleteAll:hover {
+  box-shadow: var(--card-box-shadow);
+}
+
+/* Responsiv design */
+@media (max-width: 768px) {
+  .input {
+    padding-top: 20px;
+  }
+
+  .search {
+    flex-direction: column;
+  }
+
+  .byTitle,
+  .byCategory {
+    width: 100%;
+  }
 }
