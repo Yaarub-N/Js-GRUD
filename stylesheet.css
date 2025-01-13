@@ -121,6 +121,15 @@ input[type="number"]:focus {
   outline: none;
   box-shadow: var(--card-box-shadow);
 }
+.total {
+  position: relative;
+  padding: 15px;
+}
+.total::after {
+  content: "Total:";
+  position: absolute;
+  color: var(--error-color);
+}
 
 /* Knappar */
 .create {
