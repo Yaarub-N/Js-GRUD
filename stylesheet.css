@@ -63,12 +63,6 @@ body {
   color: var(--main-text2-color);
 }
 
-.header h4 {
-  font-size: 1.2rem;
-  color: var(--main-text-color);
-  margin-top: 5px;
-}
-
 /* Temaomkopplare */
 .switchContainer {
   position: relative;
@@ -125,13 +119,12 @@ input[type="number"]:focus {
   box-shadow: var(--card-box-shadow);
 }
 .total {
-  position: relative;
   padding: 15px;
-}
-.total::after {
-  content: "Total:";
-  position: absolute;
   color: var(--error-color);
+}
+.total::before {
+  content: "Total:";
+  left: calc(300px);
 }
 
 /* Knappar */

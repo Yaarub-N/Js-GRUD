@@ -13,8 +13,7 @@
   <body>
     <header class="header">
       <div class="container">
-        <h2>Product Provider</h2>
-        <h4>Product Management System</h4>
+        <h2>Product Management System</h2>
         <div class="switchContainer">
           <input type="checkbox" id="theme-switch" class="switch" />
           <label for="theme-switch">
@@ -28,11 +27,31 @@
         <div class="input">
           <input type="text" id="title" placeholder="Title" />
           <div class="price-box">
-            <input type="number" id="price" placeholder="Price" />
-            <input type="number" id="taxes" placeholder="Taxes" />
-            <input type="number" id="ads" placeholder="Ads" />
-            <input type="number" id="discount" placeholder="Discount" />
-            <div class="total"></div>
+            <input
+              onkeyup="getTotal()"
+              type="number"
+              id="price"
+              placeholder="Price"
+            />
+            <input
+              onkeyup="getTotal()"
+              type="number"
+              id="taxes"
+              placeholder="Taxes"
+            />
+            <input
+              onkeyup="getTotal()"
+              type="number"
+              id="ads"
+              placeholder="Ads"
+            />
+            <input
+              onkeyup="getTotal()"
+              type="number"
+              id="discount"
+              placeholder="Discount"
+            />
+            <div class="total" id="total"></div>
           </div>
           <div class="count-category-box">
             <input type="number" id="count" placeholder="Count" />
