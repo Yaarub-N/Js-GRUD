@@ -85,7 +85,7 @@ function read() {
   let readPro = "";
   for (let i = 0; i < data.length; i++) {
     readPro += ` <tr>
-                <td>${data[i].id}</td>
+                <td>${[i]}</td>
                 <td>${data[i].title}</td>
                 <td>${data[i].price}</td>
                 <td>${data[i].taxes}</td>
@@ -94,9 +94,15 @@ function read() {
                 <td>${data[i].total}</td>
                 <td>${data[i].category}</td>
                 <td><button class="update" id="update">update</button></td>
-                <td><button class="delete" id="Delete">Delete</button></td>
+                <td><button class="delete" onclick="deleteOne(${i})" id="Delete">Delete</button></td>
               </tr>`;
   }
 
   tbody.innerHTML = readPro;
+}
+
+function deleteOne(i) {
+  data.splice(i, 1);
+  localStorage.setItem(`product`, JSON.stringify(data));
+  read();
 }
