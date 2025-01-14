@@ -99,10 +99,22 @@ function read() {
   }
 
   tbody.innerHTML = readPro;
+  if (readPro.length > 0) {
+    let deleteAll = document.querySelector("#deleteAll");
+    deleteAll.style.display = "block";
+  } else {
+    deleteAll.style.display = "none";
+  }
 }
 
 function deleteOne(i) {
   data.splice(i, 1);
   localStorage.setItem(`product`, JSON.stringify(data));
+  read();
+}
+
+function deleteAllfunction() {
+  data.splice(0);
+  localStorage.clear();
   read();
 }
