@@ -60,7 +60,9 @@ create.addEventListener("click", function () {
     count: count.value,
     category: category.value,
   };
-  data.push(datapro);
+  for (let i = 0; i < count.value; i++) {
+    data.push(datapro);
+  }
   console.log(data);
   localStorage.setItem(`product`, JSON.stringify(data));
   clearInputs();
@@ -101,7 +103,9 @@ function read() {
   tbody.innerHTML = readPro;
   if (readPro.length > 0) {
     let deleteAll = document.querySelector("#deleteAll");
+    deleteAll.innerHTML = `Delete  (${data.length})`;
     deleteAll.style.display = "block";
+    deleteAll.after.textContent = `${readPro.length}`;
   } else {
     deleteAll.style.display = "none";
   }
