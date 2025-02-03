@@ -25,7 +25,7 @@ This project demonstrates a simple CRUD (Create, Read, Update, Delete) applicati
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/crud-app.git
+   git clone https://github.com/Yaarub-N/crud-app.git
    ```
 
 2. Navigate to the project folder:
@@ -65,10 +65,6 @@ crud-app/
 └── README.md     # Project documentation
 ```
 
-## Future Enhancements
-
-- Add support for persistent storage using Local Storage or a database.
-- Implement search functionality to quickly find items.
 
 ### Author
 
